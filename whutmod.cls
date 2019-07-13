@@ -8,7 +8,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{whutmod}
-				[2018/07/13 v0.991 UNOFFICIAL LaTeX Template for WHUT Modeling]
+				[2018/07/13 v0.992 UNOFFICIAL LaTeX Template for WHUT Modeling]
 %% Inital Code
 \newif\if@mcm@bwprint\@mcm@bwprintfalse
 \newif\if@mcm@preface\@mcm@prefacetrue
@@ -63,7 +63,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \RequirePackage{cprotect}
 \RequirePackage{listings}
 \RequirePackage{xcolor}
-\RequirePackage{hyperref}
+\RequirePackage[pdfborder=001]{hyperref}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
