@@ -1,0 +1,149 @@
+\documentclass{whutmod}
+\usepackage{metalogo}
+\team{0}	% 组号
+\membera{组员A}
+\joba{编程}
+\memberb{组员B}
+\jobb{建模}
+\memberc{组员C}
+\jobc{建模}
+
+\title{武汉理工大学数学建模培训\LaTeX 模板}
+\tihao{0} % 题号
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	whutmod 是为武汉理工大学数学建模培训编写的\LaTeX 模板, 旨在让大家专注于论文的内容写作, 而不用花费过多精力在格式的定制和调整上。本手册是相应的参考, 其中提供了一些环境和命令可以让模板的使用更为方便。同时需要注意,使用者需要有一定的\LaTeX 的使用经验, 至少要会使用常用宏包的一些功能, 比如参考文献，数学公式，图片使用，列表环境等等。示例文件请参看demo.pdf。
+	
+	编译要求：\XeLaTeX
+	
+	编译环境：\TeX Live 2019
+	
+	本模板根据2018年培训论文格式规范，结合全国大学生数学建模竞赛论文格式规范编写，首次发布于2018年7月30日。
+	本模板的诞生离不开一大批优秀的\LaTeX 先辈以及优秀的文档类、宏包以及模板，在此特别致谢 latexstudio及其维护的国赛模板，以及校苑数模维护的美赛模板。
+	
+	\keywords{
+		\LaTeX \quad
+		数学建模 \quad
+	}
+\end{abstract}
+\section{问题重述}
+
+创意平板折叠桌注重于表达木制品的优雅和设计师所想要强调的自动化与功能性。为了增大有效使用面积。设计师以长方形木板的宽为直径截取了一个圆形作为桌面，又将木板剩余的面积切割成了若干个长短不一的木条，每根木条的长度为平板宽到圆上一点的距离，分别用两根钢筋贯穿两侧的木条，使用者只需提起木板的两侧，便可以在重力的作用下达到自动升起的效果，相互对称的木条宛如下垂的桌布，精密的制作工艺配以质朴的木材，让这件工艺品看起来就像是工业革命时期的机器。
+
+\subsection{问题的提出}
+
+围绕创意平板折叠桌的动态变化过程、设计加工参数，本文依次提出如下问题：
+
+（1）给定长方形平板尺寸 （$120 cm \times 50 cm \times 3 cm$），每根木条宽度（2.5 cm），连接桌腿木条的钢筋的位置，折叠后桌子的高度（53 cm）。要求建立模型描述此折叠桌的动态变化过程，并在此基础上给出此折叠桌的设计加工参数和桌脚边缘线的数学描述。
+
+（2）......
+
+
+\section{模型的假设}
+
+\begin{itemize}
+	\item 忽略实际加工误差对设计的影响；
+	\item 木条与圆桌面之间的交接处缝隙较小，可忽略；
+	\item 钢筋强度足够大，不弯曲；
+	\item 假设地面平整。
+\end{itemize}
+
+\section{符号说明}
+\begin{center}
+	\begin{tabular}{cc}
+		\hline
+		\makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
+		D	    & 木条宽度（cm） \\ \hline
+		L	    & 木板长度（cm）  \\ \hline
+		W	    & 木板宽度（cm）  \\ \hline
+		N	    & 第n根木条  \\ \hline
+		T	    & 木条根数  \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{问题分析}
+
+\subsection{问题一分析}
+题目要求建立模型描述折叠桌的动态变化图，由于在折叠时用力大小的不同，我们不能描述在某一时刻折叠桌的具体形态，但我们可以用每根木条的角度变化来描述折叠桌的动态变化。插入参考文献\cite{bib:one}。
+
+问题流程图：
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=.6\textwidth]{1.png}
+	\caption{问题三流程图}
+\end{figure}
+
+\section{绘制普通三线表格}
+表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
+\begin{table}[!htbp]
+	\caption{标准三线表格}\label{tab001} \centering
+	\begin{tabular}{ccccc}
+		\toprule[1.5pt]
+		$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
+		\midrule[1pt]
+		5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+		10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+		20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+%参考文献
+\begin{thebibliography}{9}%宽度9
+	\bibitem{bib:one} GAO L, GONDA I, SUN H, et al. The Tomato Pan-Genome Uncovers New Genes and a	Rare Allele Regulating Fruit Flavor[J]. Nature Genetics, 2019:1.
+	\bibitem{bib:two} ....
+\end{thebibliography}
+
+\appendix %%附录
+\section{代码}
+\subsection{排队算法--matlab 源程序}
+\begin{lstlisting}[language=matlab]
+kk=2;[mdd,ndd]=size(dd);
+while ~isempty(V)
+[tmpd,j]=min(W(i,V));tmpj=V(j);
+for k=2:ndd
+[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+end
+tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+if dd(2,tmp4)==ss(tmp6,tmp4)
+ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+end;end
+dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+[mdd,ndd]=size(dd);kk=kk+1;
+end; S=ss; D=dd(1,:);
+\end{lstlisting}
+\subsection{规划解决程序--lingo源代码}
+\begin{lstlisting}[language=c]
+kk=2;
+[mdd,ndd]=size(dd);
+while ~isempty(V)
+[tmpd,j]=min(W(i,V));tmpj=V(j);
+for k=2:ndd
+[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+end
+tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+if dd(2,tmp4)==ss(tmp6,tmp4)
+ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+end;
+end
+dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+[mdd,ndd]=size(dd);
+kk=kk+1;
+end;
+S=ss;
+D=dd(1,:);
+\end{lstlisting}
+
+\end{document}
