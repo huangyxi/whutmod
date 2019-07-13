@@ -3,6 +3,7 @@
 %% Derived from and Compatible with latexstudio/CUMCMThesis
 %% Modified by Mark Huang Communication Engineering (Experimental)
 %% First Released on 2018/7/30
+%% See https://github.com/Markhng/whutmod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
@@ -41,7 +42,7 @@
 \RequirePackage{ifxetex}
 \RequireXeTeX
 \ifxetex\else
-\ClassError{whut_modeling_thesis}{You must use the `xelatex' driver\MessageBreak Please choose `xelatex'}{%
+\ClassError{whutmod}{You must use the `xelatex' driver\MessageBreak Please choose `xelatex'}{%
 Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
 \RequirePackage{ctex}
