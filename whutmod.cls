@@ -8,7 +8,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{whutmod}
-				[2018/07/13 v0.992 UNOFFICIAL LaTeX Template for WHUT Modeling]
+				[2018/07/13 v0.993 UNOFFICIAL LaTeX Template for WHUT Modeling]
 %% Inital Code
 \newif\if@mcm@bwprint\@mcm@bwprintfalse
 \newif\if@mcm@preface\@mcm@prefacetrue
@@ -208,7 +208,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   
 	\vskip2ex
 	\thispagestyle{empty}
-	\setcounter{page}{1}
 	\begin{center}
 		
 		\includegraphics[width=12.83cm]{whut.jpg}
@@ -274,6 +273,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	 {\normalfont\normalsize\bfseries}}
 
 \renewenvironment{abstract}{%
+\thispagestyle{empty}
+\setcounter{page}{0}
 \if@twocolumn
 		\section*{\abstractname}%
 	\else
