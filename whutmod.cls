@@ -1,10 +1,10 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% UNOFFICIAL LaTeX Template for WHUT Summer Modeling Training
-%% Derived from and Compatible with latexstudio/CUMCMThesis
-%% Modified by Mark Huang Communication Engineering (Experimental)
+%% Derived from and compatible with latexstudio/CUMCMThesis
+%% Modified by Mark Huang from Communication Engineering (Experimental)
 %% First Released on 2018/7/30
-%% See https://github.com/Markhng/whutmod
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% See https://github.com/huangyxi/whutmod
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{whutmod}
@@ -205,17 +205,17 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \newpage
   \if@mcm@preface
   \null
-  
+
 	\vskip2ex
 	\thispagestyle{empty}
 	\begin{center}
-		
+
 		\includegraphics[width=12.83cm]{whut.jpg}
 		\vskip2ex
 		{\zihao{2}\fs \textbf{数学建模暑期培训论文}}
 		\vskip7ex
 		{\zihao{2}\fs \textbf{第\;{\color{red} \mcm@tokens@tihao}\;题}}
-		
+
 		\vskip5ex
 		{\zihao{2}\fs \textbf{\@title}
 			\\[-30pt]\noindent\rule{12.83cm}{2pt}\par}
@@ -329,7 +329,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
       \sfcode`\.\@m}
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}	
+      \endlist}
 
 \newcommand*\tihao[1]{%
 	\renewcommand{\mcm@tokens@tihao}{#1}}
