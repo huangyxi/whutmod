@@ -37,7 +37,7 @@
 \ExecuteOptions{colorprint}
 \ProcessOptions\relax
 %% Loading Class
-\LoadClass[a4paper,12pt]{article}
+\LoadClass[a4paper,12pt]{ctexart}
 %% Loading Package
 \RequirePackage{ifxetex}
 \RequireXeTeX
@@ -45,7 +45,6 @@
 \ClassError{whutmod}{You must use the `xelatex' driver\MessageBreak Please choose `xelatex'}{%
 Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
-\RequirePackage{ctex}
 \RequirePackage{geometry}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -107,11 +106,21 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 \setCJKfamilyfont{kai}[AutoFakeBold]{simkai.ttf}
-\newcommand*{\kai}{\CJKfamily{kai}}
+\providecommand{\kai}{\CJKfamily{kai}}
 \setCJKfamilyfont{song}[AutoFakeBold]{SimSun}
-\newcommand*{\song}{\CJKfamily{song}}
-\setCJKfamilyfont{fs}[AutoFakeBold]{STFangsong}
-\newcommand*{\fs}{\CJKfamily{fs}}
+\providecommand{\song}{\CJKfamily{song}}
+\IfFontExistsTF{simfang}{
+	\setCJKfamilyfont{fs}[AutoFakeBold]{simfang}
+	\providecommand{\fs}{\CJKfamily{fs}}
+}{
+	\IfFontExistsTF{simfang.ttf}{
+		\setCJKfamilyfont{fs}[AutoFakeBold]{simfang.ttf}
+		\providecommand{\fs}{\CJKfamily{fs}}
+	}{
+		\ClassWarning{whutmod}{Font `simfang' not found, using `SimSun' instead}%
+		\providecommand{\fs}{\songti}
+	}
+}
 %\setCJKfamilyfont{fangsong}{STFangsong}
 %\newcommand*{\fangsong}{\CJKfamily{fangsong}}
 
@@ -183,6 +192,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 %% Document Markup
 
+{\fs}	% the serial number of the first section will be wrong if missing this line
+% and not printing `maketitle'
 \renewcommand{\maketitle}{\par
 	\begingroup
       \newpage
@@ -385,4 +396,3 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
 
 \endinput
-
